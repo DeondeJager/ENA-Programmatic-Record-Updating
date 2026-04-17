@@ -1,5 +1,5 @@
 # Programmatically update records on the ENA
-*Last updated: 17 April 2026*
+*Last updated: 18 April 2026*
 
 I wrote this guide, mostly for my own records, as I spent a couple of days trying to figure out how to programmatically update >200 run and experiment records on the European Nucleotide Archive (ENA) and didn't want to go through that pain again if I ever needed to something similar in the future. 
 
@@ -25,7 +25,12 @@ First thing you need is a list of the accessions that you want to edit.
 
 In my case, I wanted to download the metadata `XML`s of all the runs linked to a specific ENA `STUDY`:
  - After logging into Webin, navigated to the "Studies Report" page and clicked on the "Action" icon next to the project (the box with an arrow inside it) and clicking on "Show runs".
- - This brings up a page with all the runs linked to that project, where I clicked on the "Download all results", which downloads a `CSV` file with accession number of the `RUN` in the `id` field, and also includes the `STUDY`, `EXPERIMENT`, and `SAMPLE` accessions. 
+
+![alt text](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/blob/main/assets/Step1_1.png)
+ - This brings up a page with all the runs linked to that project, where I clicked on the "Download all results", which downloads a `CSV` file with accession number of the `RUN` in the `id` field, and also includes the `STUDY`, `EXPERIMENT`, and `SAMPLE` accessions.
+
+![alt text](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/blob/main/assets/Step1_2.png)
+
  This is useful if you need to update any other metadata, for example I also need to update the `damage treatment` field in the `EXPERIMENT` records too.
  - Here are the first three lines of the `CSV` file, which we view with `head -n 3 runs-2026-04-17T08_56_33.csv`:
 ```
@@ -40,11 +45,17 @@ Now that we have a file with the accession numbers, we need to download the actu
 This is where `curl` and the Webin REST API mentioned in the ENA docs comes into play.
  - In a browser, head to the [Webin REST V2 Service](https://www.ebi.ac.uk/ena/submit/webin-v2/swagger-ui/index.html#/).
  - This is a crucial step: Click on the "Authorize" button on the top-right of the screen and enter your Webin credentials - the lock icon should change from open to closed.
+
+![alt text](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/blob/main/assets/Step2_1.png)
+
  - Under the "retrieveAPI" expand the relevant "GET" section, in my case it was the "GET /run/{id}" section.
  - Click on "Try it out" on the right.
  - Before entering the id, change the "Media type" to "application/xml" (or keep it as "application/json" if that's the format you prefer).
  - Enter one of your accessions in the "id" field and click "Execute".
- - Under "Responses" you will see the "Curl" section with the `curl` code, including a 36-character authorization code, you need to download the `XML` for the accession, which we will use in the next section.
+ - Under "Responses" you will see the "Curl" section with the `curl` code, including a 36-character authorization code (blurred out in the screenshot), which you need to download the `XML` for the accession, which we will use in the next section.
+
+![alt text](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/blob/main/assets/Step2_2.png)
+
   - Copy and paste this code into a text document and save it as `download_xml.sh` or some descriptive name.
 
 ## 3. Download XML (or JSON) files
