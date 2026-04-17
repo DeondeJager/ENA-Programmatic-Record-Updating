@@ -16,7 +16,7 @@ So here we are, with a guide that hopefully will help others like me in a simila
 1. [Get list of records](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#1-get-list-of-records)
 2. [Get example code from ENA Webin REST API](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#2-get-example-code-from-ena-webin-rest-api)
 3. [Download XML (or JSON) files](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#3-download-xml-or-json-files)
-4. [Resubmit the updated `XML` files to the ENA](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#4-resubmit-the-updated-xml-files-to-the-ena)
+4. [Resubmit the updated XML files to the ENA](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#4-resubmit-the-updated-xml-files-to-the-ena)
 
 ## 0. Requirements and other use cases
  - This guide assumes you are on a Linux command-line interface and have [curl](https://curl.se/) available.
