@@ -11,6 +11,13 @@ Turns out it wasn't as easy as I had hoped and I unfortunately found the ENA doc
 
 So here we are, with a guide that hopefully will help others like me in a similar situation (looking at you, future me).
 
+## Contents
+0. [Requirements and other use cases](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#0-requirements-and-other-use-cases)
+1. [Get list of records](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#1-get-list-of-records)
+2. [Get example code from ENA Webin REST API](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#2-get-example-code-from-ena-webin-rest-api)
+3. [Download XML (or JSON) files](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#3-download-xml-or-json-files)
+4. [Resubmit the updated `XML` files to the ENA](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#4-resubmit-the-updated-xml-files-to-the-ena)
+
 ## 0. Requirements and other use cases
  - This guide assumes you are on a Linux command-line interface and have [curl](https://curl.se/) available.
  - I'm using `XML` files here, but the ENA also supports `JSON` files - just replace the former with the latter in all code and steps below.
@@ -79,7 +86,7 @@ curl -X 'GET' \
   -H 'Authorization: Basic <insert 36 character authorization code>' \
   > ${ACCESSION}.xml
 ```
-### 3.2. Download the actual `XML` files
+### 3.2. Download the actual XML files
 Here we use the `CSV` file downloaded in Step 1 and the `download_xml.sh` script to download all the `XML` files.
 ```
 tail -n +2 runs-2026-04-17T08_56_33.csv | cut -f1 -d "," | while read -r line; do ./download_xml.sh $line; done
@@ -91,7 +98,7 @@ Where:
 
 *Note: To download the `STUDY`, `EXPERIMENT`, or `SAMPLE` `XML` files instead, use `-f8`, `-f9`, or `-f10`, respectively.*
 
-### 3.3. Update your `XML` files
+### 3.3. Update your XML files
 Make whatever edits are required.
 
 I had to make the same change to many files, which is where the command-line shines and is why I wanted to go this route.
@@ -103,12 +110,12 @@ for file in ERR*.xml; do sed -i 's/complete-removal/partial-removal/g' $file; do
 This replaces all instances of "complete-removal" with "partial-removal" in all the files staring with "ERR" and ending with ".xml" in-place in the file (`-i`), so without opening it.
 Beautiful.
 
-## 4. Resubmit the updated `XML` files to the ENA
+## 4. Resubmit the updated XML files to the ENA
 This is a part I particularly struggled to figure out, as the API page used earlier has a "submitAPI", which I tried and it provided some code, but it kept giving an error about not being able to separate the file.
 
 After some searching online, [SciLifeLab's](https://data-guidelines.scilifelab.se/) [tutorial](https://data-guidelines.scilifelab.se/topics/ena-submission-tutorial/) and [this](https://youtu.be/1qvG9mtxSYo?si=knZWZlOi7EQkH9Ew&t=1126) ENA YouTube video helped clarify the exact command needed for uploading `XML` files via `curl`, which is different to the code provided by the "submitAPI".
 
-### 4.1. Make an action `XML`
+### 4.1. Make an action XML
 First, make an "action" `XML` file, which describes the action you want to perform; e.g. `MODIFY` for editing existing entries, or `ADD` for submitting new entries.
  - Here, we create a the file `modify.xml`, but you can also make a `submit.xml` and replace `MODIFY` with `ADD` for new submissions:
 
