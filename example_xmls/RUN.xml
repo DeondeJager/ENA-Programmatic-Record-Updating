@@ -1,0 +1,65 @@
+<RUN_SET>
+  <RUN accession="ERR16691103" alias="ena-RUN-TAB-16-02-2026-15:13:48:337-71133"
+        center_name="Globe Institute">
+      <IDENTIFIERS>
+         <PRIMARY_ID>ERR16691103</PRIMARY_ID>
+         <SUBMITTER_ID namespace="Globe Institute">ena-RUN-TAB-16-02-2026-15:13:48:337-71133</SUBMITTER_ID>
+      </IDENTIFIERS>
+      <EXPERIMENT_REF accession="ERX16081982">
+         <IDENTIFIERS>
+            <PRIMARY_ID>ERX16081982</PRIMARY_ID>
+         </IDENTIFIERS>
+      </EXPERIMENT_REF>
+      <PLATFORM>
+         <ILLUMINA>
+            <INSTRUMENT_MODEL>Illumina NovaSeq 6000</INSTRUMENT_MODEL>
+         </ILLUMINA>
+      </PLATFORM>
+      <DATA_BLOCK>
+         <FILES>
+            <FILE checksum="e0d2443690424315034bf72767915e20" checksum_method="MD5"
+                  filename="run/ERR166/ERR16691103/BEST_011_EKDL220006554-1a-AK1004-AK31472_HKFNCDSX3_L3_1.fq.gz"
+                  filetype="fastq"
+                  quality_scoring_system="phred"/>
+            <FILE checksum="8324f37f46f348979cb0d6a769462517" checksum_method="MD5"
+                  filename="run/ERR166/ERR16691103/BEST_011_EKDL220006554-1a-AK1004-AK31472_HKFNCDSX3_L3_2.fq.gz"
+                  filetype="fastq"
+                  quality_scoring_system="phred"/>
+         </FILES>
+      </DATA_BLOCK>
+      <RUN_ATTRIBUTES>
+         <RUN_ATTRIBUTE>
+            <TAG>adapters</TAG>
+            <VALUE>AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC;ACACTCTTTCCCTACACGACGCTCTTCCGATCT</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>damage treatment type</TAG>
+            <VALUE>partial-removal</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>data filtering applied</TAG>
+            <VALUE>no</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>Library construction protocol</TAG>
+            <VALUE>BEST: https://dx.doi.org/10.17504/protocols.io.4r3l21yq4g1y/v1</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>library polymerase</TAG>
+            <VALUE>Kapa Hifi Uracil+ Readymix</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>library type</TAG>
+            <VALUE>shotgun</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>multiplex identifiers</TAG>
+            <VALUE>CGACCT;GACCATC</VALUE>
+         </RUN_ATTRIBUTE>
+         <RUN_ATTRIBUTE>
+            <TAG>nucleic acid strandedness in library creation</TAG>
+            <VALUE>double</VALUE>
+         </RUN_ATTRIBUTE>
+      </RUN_ATTRIBUTES>
+  </RUN>
+</RUN_SET>
