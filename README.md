@@ -3,7 +3,7 @@
 
 I wrote this guide, mostly for my own records, as I spent a couple of days trying to figure out how to programmatically update >200 run and experiment records on the European Nucleotide Archive (ENA) and didn't want to go through that pain again if I ever needed to something similar in the future. 
 
-An update to these records was required, because I had recorded the field `damage treatment` as `complete-removal` (with USER treatment) for ancient DNA libraries and later realised that I had in fact used partial USER treatment ... :eyes: ..., so anyway, I had to change all records to `partial-removal` (see the [MInAS project](https://www.mixs-minas.org/extension-ancient/) for ancient DNA-specific metadata fields).
+*An update to these records was required, because I had recorded the field `damage treatment` as `complete-removal` (with USER treatment) for ancient DNA libraries and later realised that I had in fact used partial USER treatment ...* :eyes:*, so anyway, I had to change all records to `partial-removal` (see the [MInAS project](https://www.mixs-minas.org/extension-ancient/) for ancient DNA-specific metadata fields).*
 
 Not wanting to update 272 run and experiment XML files on [Webin](https://www.ebi.ac.uk/ena/submit/webin/) manually, one-by-one, individually... I decided to look into doing this programmatically, as I had come across this [option](https://ena-docs.readthedocs.io/en/latest/update/metadata/programmatic-read.html) a couple of times in the [ENA docs](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/programmatic.html) but hadn't tried it before.
 
