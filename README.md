@@ -19,7 +19,8 @@ So here we are, with a guide that hopefully will help others like me in a simila
 4. [Resubmit the updated XML files to the ENA](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#4-resubmit-the-updated-xml-files-to-the-ena)
 
 ## 0. Requirements and other use cases
- - This guide assumes you are on a Linux command-line interface and have [curl](https://curl.se/) available.
+ - This guide assumes you are on a command-line interface and have [curl](https://curl.se/) available (check with `curl --help`).
+ - I'm on a Windows Subsystem for Linux ([WSL](https://learn.microsoft.com/en-gb/windows/wsl/)) v2.6.1 terminal in [Visual Studio Code](https://code.visualstudio.com/) on Windows 11 and using `curl 8.5.0 (x86_64-pc-linux-gnu)`.
  - I'm using `XML` files here, but the ENA also supports `JSON` files - just replace the former with the latter in all code and steps below.
  - The example used in this guide is *updating* `RUN` records, but a very similar approach applies to update other [ENA metadata classes](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/metadata.html#metadata-model), such as `EXPERIMENT`, `ANALYSIS`, `SAMPLE`, and `STUDY` records.
  Simply replace `RUN` or `run` in any of the code and steps below with the relevant term, though I haven't actually tested this :open_hands:
