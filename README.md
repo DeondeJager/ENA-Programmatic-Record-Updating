@@ -1,6 +1,8 @@
 # Programmatically update records on the ENA
 *Last updated: 18 April 2026*
 
+---
+
 I wrote this guide, mostly for my own records, as I spent a couple of days trying to figure out how to programmatically update >200 run and experiment records on the European Nucleotide Archive (ENA) and didn't want to go through that pain again if I ever needed to something similar in the future. 
 
 *An update to these records was required, because I had recorded the field `damage treatment` as `complete-removal` (with USER treatment) for ancient DNA libraries and later realised that I had in fact used partial USER treatment ...* :eyes:*, so anyway, I had to change all records to `partial-removal` (see the [MInAS project](https://www.mixs-minas.org/extension-ancient/) for ancient DNA-specific metadata fields).*
@@ -10,6 +12,8 @@ Not wanting to update 272 run and experiment XML files on [Webin](https://www.eb
 Turns out it wasn't as easy as I had hoped and I unfortunately found the ENA documentation to be clear as mud for someone with my level of experience (whatever that might be).
 
 So here we are, with a guide that hopefully will help others like me in a similar situation (looking at you, future me).
+
+---
 
 ## Contents
 0. [Requirements and other use cases](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/tree/main#0-requirements-and-other-use-cases)
