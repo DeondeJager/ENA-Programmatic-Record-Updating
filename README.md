@@ -56,12 +56,12 @@ Now that we have a file with the accession numbers, we need to download the actu
 
 This is where `curl` and the Webin REST API mentioned in the ENA docs comes into play.
  - In a browser, head to the [Webin REST V2 Service](https://www.ebi.ac.uk/ena/submit/webin-v2/swagger-ui/index.html#/).
- - This is a crucial step: Click on the "Authorize" button on the top-right of the screen and enter your Webin credentials - the lock icon should change from open to closed.
+ - This is a crucial step: Click on the "Authorize" button and enter your Webin credentials - the lock icon should change from open to closed.
 
 ![alt text](https://github.com/DeondeJager/ENA-Programmatic-Record-Updating/blob/main/assets/Step2_1.png)
 
  - Under the "retrieveAPI" expand the relevant "GET" section, in my case it was the "GET /run/{id}" section.
- - Click on "Try it out" on the right.
+ - Click on "Try it out".
  - Before entering the id, change the "Media type" to "application/xml" (or keep it as "application/json" if that's the format you prefer).
  - Enter one of your accessions in the "id" field and click "Execute".
  - Under "Responses" you will see the "Curl" section with the `curl` code, including a 36-character authorization code (blurred out in the screenshot), which you need to download the `XML` for the accession, which we will use in the next section.
