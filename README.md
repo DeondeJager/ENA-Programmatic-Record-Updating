@@ -164,7 +164,7 @@ For many `XML`s, we can wrap the command in a loop, and we also save the screen 
 
 In a directory containing all the updated `XML`s you want to upload and the `modify.xml` we created, run:
 ```
-for file in ERR*.xml; do curl -u username:password -F "RUN=@$file" -F "SUBMISSION=@modify.xml" "https://www.ebi.ac.uk/ena/submit/drop-box/submit/" &>> runs_update_receipt.xml; done
+for file in ERR*.xml; do curl -u username:password -F "RUN=@$file" -F "SUBMISSION=@modify.xml" "https://www.ebi.ac.uk/ena/submit/drop-box/submit/" >> runs_update_receipt.xml; done
 ```
  - `ERR*.xml` should be changed to match your filenames, for example `ERX*.xml` for `EXPERIMENT` files.
  - `&>> runs_update_receipt.xml` adds and appends the screen output for each `XML` to the file `runs_update_receipt.xml` (`>` = overwrite, `>>` = append).
